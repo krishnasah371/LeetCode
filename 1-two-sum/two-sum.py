@@ -6,6 +6,6 @@ class Solution:
             complement = target - nums[i]
             if complement in dict:
                 return [dict[complement], i]
-            else:
-                dict[nums[i]] = i
+            
+            dict[nums[i]] = i
         

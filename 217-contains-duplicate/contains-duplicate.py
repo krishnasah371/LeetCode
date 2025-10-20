@@ -6,8 +6,8 @@ class Solution:
         for num in nums:
             if num in duplicate:
                 return True
-            else:
-                duplicate.add(num)
+            
+            duplicate.add(num)
         return False
 
         

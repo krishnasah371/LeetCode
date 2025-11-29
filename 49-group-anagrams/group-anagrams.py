@@ -1,10 +1,10 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        
-        anagrams = defaultdict(list)
+
+        anagrams_list = defaultdict(list)
 
         for word in strs:
             key = ''.join(sorted(word))
-            anagrams[key].append(word)
-
-        return list(anagrams.values())
+            anagrams_list[key].append(word)
+        return list(anagrams_list.values())
+            

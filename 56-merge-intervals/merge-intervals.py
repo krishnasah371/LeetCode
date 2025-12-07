@@ -6,11 +6,9 @@ class Solution:
         
         for i in range(len(intervals)):
             if not return_arr:
-                return_arr.append(intervals[0])
-            elif intervals[i][0] <= return_arr[-1][1] and return_arr[-1][1] <= intervals[i][1]:
-                return_arr[-1] = [return_arr[-1][0], intervals[i][1]]
-            elif intervals[i][0] <= return_arr[-1][1] and return_arr[-1][1] > intervals[i][1]:
-                continue
+                return_arr.append(intervals[i])
+            elif intervals[i][0] <= return_arr[-1][1]:
+                return_arr[-1] = [return_arr[-1][0], max(intervals[i][1],return_arr[-1][1])]
             else:
                 return_arr.append(intervals[i])
 

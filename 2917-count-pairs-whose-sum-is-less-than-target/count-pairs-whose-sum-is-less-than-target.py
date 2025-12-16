@@ -1,11 +1,20 @@
 class Solution:
     def countPairs(self, nums: List[int], target: int) -> int:
 
+        nums = sorted(nums)
+        print(nums)
+
+        left = 0
+        right = len(nums) - 1
         count = 0
 
-        for i in range(len(nums)-1):
-            for j in range(i+1, len(nums)):
-                if nums[i] + nums[j] < target:
-                    count += 1
+        while left < right:
+
+            if nums[left] + nums[right] == target or nums[left] + nums[right] > target:
+                right -= 1
+            else:
+                count += right - left
+                left += 1
         return count
+
         

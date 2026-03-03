@@ -3,14 +3,14 @@ class Solution:
 
         #find minimum length of the string
 
-        minimum_length = len(strs[0])
+        min_len = len(strs[0])
         prefix = ""
 
         for word in strs:
-            if len(word) < minimum_length:
-                minimum_length = len(word)
+            if len(word) < min_len:
+                min_len = len(word)
 
-        for i in range(minimum_length):
+        for i in range(min_len):
             char_to_match = strs[0][i]
 
             for word in strs:
@@ -21,4 +21,3 @@ class Solution:
                 continue
             break
         return prefix
-                
